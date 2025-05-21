@@ -2,30 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movies World</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #000;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #ccc;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .main-section {
+      background-color: #053157;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .main-section h2 {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .main-section p.subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .btn-login {
+      background-color: #2196F3;
+      color: #fff;
+      padding: 10px 30px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .btn-login:hover {
+      background-color: #1e88e5;
+    }
+
+    .bottom-text {
+      margin-top: 60px;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .bottom-text a {
+      display: block;
+      color: #fff;
+      font-weight: bold;
+      margin-top: 5px;
+      text-decoration: none;
+    }
+
+    .bottom-text a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body>
 
-  <div class="bg-white rounded-2xl shadow-lg p-8 max-w-md text-center">
-    <h1 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Our App</h1>
-    <p class="text-gray-600 mb-6">Please sign up or log in to continue.</p>
+  <!-- Header -->
+  <header>
+    <h1>MOVIES<br>WORLD</h1>
+  </header>
 
-    <div class="flex flex-col space-y-4">
-      <a href="/signup" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
-        Sign Up
-      </a>
-      <a href="/login" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-2 px-4 rounded-xl transition duration-200">
-        Log In
-      </a>
+  <!-- Main Section -->
+  <section class="main-section">
+    <h2>WELCOME TO MOVIES WORLD</h2>
+    <p class="subtitle">SIGNIN TO WATCH YOUR FAVOURITE MOVIES</p>
+    <a href="/login" class="btn-login">LOGIN</a>
+
+    <div class="bottom-text">
+      <p>Don't have an account?</p>
+      <a href="/signup">SIGNUP HERE</a>
     </div>
+  </section>
 
-    <!-- Back Button -->
-    <button onclick="history.back()" class="mt-6 text-gray-500 hover:text-gray-700 underline transition duration-200">
-      ← Back
-    </button>
-  </div>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Movies World. All rights reserved.
+  </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
