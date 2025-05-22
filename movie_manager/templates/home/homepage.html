@@ -1,27 +1,136 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies World - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/user_home.css'  %}">
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body>
 
-  <div class="bg-white rounded-xl shadow-lg p-10 max-w-lg text-center">
-    <h1 class="text-4xl font-bold text-gray-800 mb-6">Welcome Home, Sir</h1>
-    <p class="text-lg text-gray-600">
-      You have been selected for our Initial Users Advantages.
-    </p>
-
-     <!-- Logout Button -->
-    <form action="{% url 'logout' %}" method="POST">
-      {% csrf_token %}
-      <button type="submit" class="bg-red-600 text-white font-semibold px-6 py-2 rounded-xl hover:bg-red-700 transition duration-200">
-        Logout
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MOVIES WORLD</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light"></span>
       </button>
-    </form>
-  </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-1">
+          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">PROFILE</a></li>
+          <form action="{% url 'logout' %}" method="POST">
+          {% csrf_token %}
+          <li class="nav-item"><a class="nav-link" href="/logout">LOGOUT</a>
+          </form></li>
+        </ul>
 
+
+
+        <form class="d-flex me-3" role="search">
+          <input class="form-control me-2 bg-dark text-white border-0" type="search" placeholder="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+
+        <!-- Sample profile icon -->
+        <!-- Centered Profile Icon -->
+
+        <div class="d-flex justify-content-center my-4 border border-white">
+          <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="rounded-circle border border-2" style="width: 30px; height: 30px; object-fit: cover;">
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+{% load static %}
+
+<!-- Trending Banner Image -->
+<div class="mb-1">
+  
+</div>
+
+
+    <!-- Top 10 Movies -->
+    <section class="container py-5">
+      <h3 class="fw-bold mb-4">LATEST MOVIES</h3>
+      <div class="row g-3">
+        <!-- Sample Movie Posters -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie2.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie3.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie4.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
+          <p>Lorem ipsum dolor sit, amet consectetur
+             adipisicing elit. Beatae perferendis omnis
+              quidem aut autem quam 
+          </p>
+        </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Movies World. All Rights Reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
