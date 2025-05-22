@@ -7,6 +7,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
+from movies.models import Movie
+
+
 # Create your views here.
 
 class WelcomeView(View):
@@ -80,4 +83,6 @@ class HomeView(View):
 
     def get(self,request,*args,**kwargs):
 
-        return render(request,'home/homepage.html')
+        movies = Movie.objects.all()
+
+        return render(request,'home/test.html', {'movies': movies})

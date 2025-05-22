@@ -11,117 +11,185 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg ">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">MOVIES WORLD</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon bg-light"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav me-1">
-          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">PROFILE</a></li>
-          <form action="{% url 'logout' %}" method="POST">
-          {% csrf_token %}
-          <li class="nav-item"><a class="nav-link" href="/logout">LOGOUT</a>
-          </form></li>
-        </ul>
-
-
-
-        <form class="d-flex me-3" role="search">
-          <input class="form-control me-2 bg-dark text-white border-0" type="search" placeholder="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
+<nav class="navbar navbar-expand-lg ">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">MOVIES WORLD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon bg-light"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav me-1">
+      <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">PROFILE</a></li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <form method="POST" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="nav-link btn btn-link" style="">LOGOUT</button>
         </form>
+      </li>
+      {% endif %}
+    </ul>
+
+
+
+    <form class="d-flex me-3" role="search">
+      <input class="form-control me-2 bg-dark text-white border-0" type="search" placeholder="Search">
+      <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
 
         <!-- Sample profile icon -->
         <!-- Centered Profile Icon -->
 
-        <div class="d-flex justify-content-center my-4 border border-white">
-          <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="rounded-circle border border-2" style="width: 30px; height: 30px; object-fit: cover;">
-        </div>
-        
-      </div>
+    <div class="d-flex justify-content-center my-4 border border-white">
+      <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="rounded-circle border border-2" style="width: 30px; height: 30px; object-fit: cover;">
     </div>
-  </nav>
+        
+    </div>
+  </div>
+</nav>
 
   <main>
-    <!-- Hero -->
-{% load static %}
-
-<!-- Trending Banner Image -->
-<div class="mb-1">
-  
-</div>
-
 
     <!-- Top 10 Movies -->
     <section class="container py-5">
       <h3 class="fw-bold mb-4">LATEST MOVIES</h3>
       <div class="row g-3">
+
+
         <!-- Sample Movie Posters -->
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam </p>
-        </div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie2.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie1.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted ">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie3.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie2.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie4.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie3.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie4.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie5.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie6.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
-        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-          <img src="{% static 'images/movie1.jpg' %}" class="img-fluid" alt="Movie 1">
-          <p>Lorem ipsum dolor sit, amet consectetur
-             adipisicing elit. Beatae perferendis omnis
-              quidem aut autem quam 
-          </p>
-        </div>
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie7.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie8.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie9.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie10.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie11.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+  <div class="card h-100">
+    <img src="{% static 'images/movie1.jpg' %}" class="card-img-top img-fluid" alt="Movie 1">
+    <div class="card-body p-2">
+      <p class="card-text small text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perferendis omnis quidem aut autem quam.
+      </p>
+    </div>
+  </div>
+</div>
 
     </section>
   </main>
