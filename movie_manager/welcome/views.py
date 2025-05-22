@@ -85,4 +85,4 @@ class HomeView(View):
 
         movies = Movie.objects.all()
 
-        return render(request,'home/test.html', {'movies': movies})
+        return render(request,'home/homepage.html', {'movies': movies})
