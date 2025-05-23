@@ -40,3 +40,7 @@ body {
       margin-right: 5px;
       margin-left: 0 px;
     }
+
+    .carousel-item img {
+  border-radius: 8px;
+}

@@ -85,4 +85,9 @@ class HomeView(View):
 
         movies = Movie.objects.all()
 
-        return render(request,'home/homepage.html', {'movies': movies})
+        featured_movies = Movie.objects.all()  # Or any logic
+
+        return render(request,'home/homepage.html', {
+        'featured_movies': featured_movies,
+        'movies': movies
+    })
